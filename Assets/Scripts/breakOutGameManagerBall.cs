@@ -79,7 +79,7 @@ public class breakOutGameManagerBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ballRigidbody2D.velocity.y);
+        //Debug.Log(ballRigidbody2D.velocity.y);
 
         
         if (Mathf.Abs(ballRigidbody2D.velocity.y) < 1 && ballRigidbody2D.velocity.y != 0)

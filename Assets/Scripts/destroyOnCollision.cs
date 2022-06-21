@@ -9,11 +9,18 @@ public class destroyOnCollision : MonoBehaviour
     public int hitPoints = 1;
     string ballName;
 
+    AudioSource audioSource;
     public GameObject destroyEffect;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        if (TryGetComponent(out AudioSource audioSource))
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+            
 
         if(ball != null)
         {
@@ -34,6 +41,9 @@ public class destroyOnCollision : MonoBehaviour
         if (collision.gameObject.name == ballName)
         {
             hitPoints = hitPoints - 1;
+
+
+            if (audioSource != null) { audioSource.Play(); }
 
             if (hitPoints <= 0)
             {
