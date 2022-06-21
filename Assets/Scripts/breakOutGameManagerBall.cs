@@ -9,9 +9,9 @@ public class breakOutGameManagerBall : MonoBehaviour
 {
     public Vector2 ballInitialVelocity = new Vector2(2f, 100f);
     public float ballSpeedMax = 10;
-    
+
     public float startingPushDelay = 3f;
-    
+
 
     public GameObject loseBarrier;
     string loseBarrierName;
@@ -21,6 +21,7 @@ public class breakOutGameManagerBall : MonoBehaviour
     public GameObject winMessage;
     public GameObject music;
     public GameObject scoreObject;
+    GameObject[] bricks;
 
     public int winningScoreThreshold = 100;
 
@@ -38,7 +39,7 @@ public class breakOutGameManagerBall : MonoBehaviour
     Vector2 startingPosition;
     
     
-    int pointCounter = 0;
+    int currentScore = 0;
 
     
 
@@ -125,6 +126,8 @@ public class breakOutGameManagerBall : MonoBehaviour
         {
             numberOfLives--;
 
+            
+
             if (numberOfLives <= 0)
             {
                 stopBall();
@@ -158,17 +161,11 @@ public class breakOutGameManagerBall : MonoBehaviour
     {
         if (collision.gameObject.tag == brickTag)
         {
-            
-            pointCounter = pointCounter + brickPoints;
+            //look for any bricks
+            bricks = GameObject.FindGameObjectsWithTag(brickTag);
 
-            if(scoreObject != null)
-            {
-                //update the UI BE SURE TO USE TESTMESHPROGUI not TextMeshPro
-                scoreObject.GetComponent<TextMeshProUGUI>().SetText(pointCounter.ToString());
-
-            }
-
-            if(pointCounter>= winningScoreThreshold)
+            //if there are none you win
+            if (bricks.Length == 0)
             {
                 stopBall();
 
@@ -179,7 +176,19 @@ public class breakOutGameManagerBall : MonoBehaviour
             }
 
 
-            //Debug.Log("score " + pointCounter);
+            currentScore = currentScore + brickPoints;
+
+            if(scoreObject != null)
+            {
+                //update the UI BE SURE TO USE TESTMESHPROGUI not TextMeshPro
+                scoreObject.GetComponent<TextMeshProUGUI>().SetText(currentScore.ToString());
+
+            }
+
+            
+
+
+            //Debug.Log("score " + currentScore);
         }
 
        
