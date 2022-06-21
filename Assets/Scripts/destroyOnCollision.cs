@@ -6,6 +6,7 @@ public class destroyOnCollision : MonoBehaviour
 {
 
     public GameObject ball;
+    public int hitPoints = 1;
     string ballName;
 
     public GameObject destroyEffect;
@@ -32,12 +33,18 @@ public class destroyOnCollision : MonoBehaviour
     {
         if (collision.gameObject.name == ballName)
         {
-            if(destroyEffect != null)
-            {
-                Instantiate(destroyEffect, transform.position,Quaternion.identity);
-            }
+            hitPoints = hitPoints - 1;
 
-            gameObject.SetActive(false);
+            if (hitPoints <= 0)
+            {
+                if (destroyEffect != null)
+                {
+                    Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                }
+
+                gameObject.SetActive(false);
+            }
+            
 
         }
     }

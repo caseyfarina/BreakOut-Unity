@@ -135,6 +135,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 63258737}
+    - target: {fileID: 9184478164435494504, guid: 34d0abdf146c7f14284467ae76f26a8e,
+        type: 3}
+      propertyPath: hitPoints
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9184478164435494505, guid: 34d0abdf146c7f14284467ae76f26a8e,
         type: 3}
       propertyPath: m_Name
@@ -1122,6 +1127,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 63258737}
+    - target: {fileID: 9184478164435494504, guid: 34d0abdf146c7f14284467ae76f26a8e,
+        type: 3}
+      propertyPath: hitPoints
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9184478164435494505, guid: 34d0abdf146c7f14284467ae76f26a8e,
         type: 3}
       propertyPath: m_Name
@@ -1737,6 +1747,11 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 63258737}
+    - target: {fileID: 9184478164435494504, guid: 34d0abdf146c7f14284467ae76f26a8e,
+        type: 3}
+      propertyPath: hitPoints
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9184478164435494505, guid: 34d0abdf146c7f14284467ae76f26a8e,
         type: 3}
       propertyPath: m_Name
