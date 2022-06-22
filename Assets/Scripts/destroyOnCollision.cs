@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class destroyOnCollision : MonoBehaviour
 {
 
@@ -10,16 +11,16 @@ public class destroyOnCollision : MonoBehaviour
     string ballName;
 
     AudioSource audioSource;
+    public AudioClip impactSound;
     public GameObject destroyEffect;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        if (TryGetComponent(out AudioSource audioSource))
-        {
+      
             audioSource = GetComponent<AudioSource>();
-        }
+        
             
 
         if(ball != null)
@@ -43,7 +44,7 @@ public class destroyOnCollision : MonoBehaviour
             hitPoints = hitPoints - 1;
 
 
-            if (audioSource != null) { audioSource.Play(); }
+            if (impactSound != null) { audioSource.PlayOneShot(impactSound); }
 
             if (hitPoints <= 0)
             {

@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-
+[RequireComponent(typeof(AudioSource))]
 public class breakOutGameManagerBall : MonoBehaviour
 {
     public Vector2 ballInitialVelocity = new Vector2(2f, 100f);
@@ -21,9 +21,11 @@ public class breakOutGameManagerBall : MonoBehaviour
     public GameObject winMessage;
     public GameObject music;
     public GameObject scoreObject;
+    AudioSource audioSource;
+    public AudioClip impact;
     GameObject[] bricks;
 
-    public int winningScoreThreshold = 100;
+    
 
     public string brickTag = "brick";
     public int brickPoints = 10;
@@ -49,7 +51,11 @@ public class breakOutGameManagerBall : MonoBehaviour
     {
 
        
+            audioSource = GetComponent<AudioSource>();
+
         
+
+
 
         //get the reference to the ball rigibody component 
         ballRigidbody2D = GetComponent<Rigidbody2D>();
@@ -159,8 +165,13 @@ public class breakOutGameManagerBall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (impact != null) { audioSource.PlayOneShot(impact); };
+
         if (collision.gameObject.tag == brickTag)
         {
+
+            
+
             //look for any bricks
             bricks = GameObject.FindGameObjectsWithTag(brickTag);
 
