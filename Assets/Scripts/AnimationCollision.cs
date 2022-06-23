@@ -10,6 +10,7 @@ public class AnimationCollision : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        animator.enabled = false;
     }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class AnimationCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        animator.enabled = true;
         animator.Play(animationClip.name, -1,0f);
     }
 }

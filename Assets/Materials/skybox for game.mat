@@ -8,9 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: skybox for game
-  m_Shader: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords:
-  - _SUNDISK_HIGH_QUALITY
+  m_Shader: {fileID: -6465566751694194690, guid: 4670c6f22cb083e4c9252a630b65bd9f,
+    type: 3}
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -61,6 +61,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_150f51ed83ad45af967579ee1df2ba2c_Texture_1:
+        m_Texture: {fileID: 2800000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -98,6 +102,7 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
@@ -110,6 +115,8 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _horizonHeight: -0.32
+    - _horizonSharpness: 3.86
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -117,6 +124,10 @@ Material:
     - _GroundColor: {r: 0.0603773, g: 1, b: 0.24884088, a: 1}
     - _SkyTint: {r: 0.4946345, g: 1, b: 0.3607843, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _bottomColor: {r: 1, g: 0.56485355, b: 0.2117647, a: 0}
+    - _bottomGradientColor: {r: 0.6792453, g: 0.55159086, b: 0.4190815, a: 0}
+    - _topColor: {r: 0.3607843, g: 0.84538686, b: 1, a: 0}
+    - _topGradientColor: {r: 0.30514416, g: 0.7149286, b: 0.745283, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7856916387417391658
 MonoBehaviour:
