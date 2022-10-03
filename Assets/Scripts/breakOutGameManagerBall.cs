@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class breakOutGameManagerBall : MonoBehaviour
 {
     public Vector2 ballInitialVelocity = new Vector2(2f, 100f);
-    public float ballSpeedMax = 10;
+    public float ballSpeed = 10;
 
     public float startingPushDelay = 3f;
 
@@ -88,13 +88,7 @@ public class breakOutGameManagerBall : MonoBehaviour
         //Debug.Log(ballRigidbody2D.velocity.y);
 
         
-        if (Mathf.Abs(ballRigidbody2D.velocity.y) < 1 && ballRigidbody2D.velocity.y != 0)
-        {
-            startingPushBall();
-        }
         
-
-        ballRigidbody2D.velocity = Vector2.ClampMagnitude(ballRigidbody2D.velocity, ballSpeedMax);
         /*
          * 
          * 
@@ -123,6 +117,23 @@ public class breakOutGameManagerBall : MonoBehaviour
             endSequence = false;
         }
         */
+    }
+
+    private void LateUpdate()
+    {
+
+        /*
+        if (Mathf.Abs(ballRigidbody2D.velocity.y) < 1 && ballRigidbody2D.velocity.y != 0)
+        {
+            startingPushBall();
+        }*/
+
+
+       // ballRigidbody2D.velocity = Vector2.ClampMagnitude(ballRigidbody2D.velocity, ballSpeedMax);
+
+        ballRigidbody2D.velocity = ballSpeed * (ballRigidbody2D.velocity.normalized);
+
+        //rigidbody.velocity = constantSpeed * (rigidbody.velocity.normalized);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
